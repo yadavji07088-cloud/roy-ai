@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roy AI Assistant</title>
+<style>
+body {
+  margin: 0;
+  background: #030b18;
+  color: #78eaff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 25px 15px;
+}
+h1 { letter-spacing: 5px; }
+.orb {
+  width: 145px;
+  height: 145px;
+  border: 3px solid #00cfff;
+  border-radius: 50%;
+  margin: 35px auto;
+  box-shadow: 0 0 35px #008cff;
+  animation: pulse 2s infinite alternate;
+}
+@keyframes pulse {
+  from { box-shadow: 0 0 15px #008cff; }
+  to { box-shadow: 0 0 45px #00cfff; }
+}
+input, button {
+  padding: 14px;
+  margin: 6px;
+  border-radius: 10px;
+  border: none;
+}
+input { width: 75%; }
+button {
+  background: #00cfff;
+  color: #001020;
+  font-weight: bold;
+}
+#reply { color: white; margin-top: 25px; }
+</style>
+</head>
+<body>
+<h1>ROY AI</h1>
+<p>Your Personal AI Assistant</p>
+<div class="orb"></div>
+<input id="question" placeholder="Roy se kuchh poocho...">
+<button onclick="askRoy()">SEND</button>
+<div id="reply">Namaste! Main Roy hoon.</div>
+<script>
+function askRoy() {
+  const q = document.getElementById("question").value.trim();
+  if (!q) return;
+  document.getElementById("reply").innerText =
+    "Roy: Abhi AI connection set karna baaki hai. Aapne kaha: " + q;
+}
+</script>
+</body>
+</html>
